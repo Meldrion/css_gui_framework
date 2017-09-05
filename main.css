@@ -1,0 +1,48 @@
+a {
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: #FFF;
+    cursor: default;
+}
+
+a:visited {
+    color: #FFF;
+}
+
+.popupmenu {
+    width: 150px;
+    border: 1px solid black;
+    background-color: rgb(80, 80, 80);
+    display: none;
+}
+
+.popupmenu > ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.popupmenu > ul > li {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.popupmenu > ul > li:hover {
+    background-color: black;
+}
+
+.popupmenu > ul > li > a {
+    list-style: none;
+    margin-left: 25px;
+    font-size: small;
+}
+
+.popupmenu > ul > li.splitter {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.popupmenu > ul > li.splitter:hover {
+    background-color: transparent;
+}
