@@ -7,10 +7,10 @@ ContextMenu = function(contextMenuElements) {
     const KEY_CODE_ESCAPE = 27;
 
     contextMenuElements.forEach(function (element) {
-        if (element === "[splitter]") {
+        if (element.name === "[splitter]") {
             elements += "<li class=\"splitter\"><hr/></li>";
         } else {
-            elements += "<li><a href=\"#\">" + element + "</a></li>";
+            elements += "<li><a href=\"#\">" + element.name + "</a></li>";
         }
     });
 

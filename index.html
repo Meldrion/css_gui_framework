@@ -8,7 +8,15 @@
 
 <body>
 <script>
-    var elements = ["Create Map", "Copy Map", "Paste Map", "Delete Map", "[splitter]", "Map Properties"];
+    var elements = [
+        {name:"Create Map",action:function () {alert("Hello World");}},
+        {name:"Copy Map",action:function () {}},
+        {name:"Paste Map",action:function () {}},
+        {name:"Delete Map",action:function () {}},
+        {name:"[splitter]",action:null},
+        {name:"Map Properties",action:function () {}}
+    ];
+
     new ContextMenu(elements);
 </script>
 </body>
