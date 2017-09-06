@@ -4,12 +4,12 @@
 
     <!--<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css"/>-->
     <link rel="stylesheet" href="main.css"/>
-
-
     <script src="libs/jquery-3.2.1.js"></script>
     <!--<script src="libs/bootstrap/js/bootstrap.js"></script>-->
     <script src="js/context_menu.js"></script>
     <script src="js/canvas.js"></script>
+    <script src="js/image.js"></script>
+    <script src="js/imageloader.js"></script>
 </head>
 
 <body>
@@ -26,11 +26,14 @@
     var contextMenu = new ContextMenu(elements);
     var canvas = new Canvas("test",640,480);
 
-/*    var imageObj = new Image();
-    imageObj.onload = function() {
-        context.drawImage(imageObj, 69, 50);
-    };
-    imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';*/
+    var image1 = new Image("res/cave.png");
+    var image2 = new Image("res/tileset.png");
+
+    var imageLoader = new ImageLoader([image1,image2]);
+    imageLoader.loadAll();
+
+    canvas.getContext().drawImage(image1, 10,10);
+    canvas.getContext().drawImage(image2, 276,10);
 
 </script>
 </body>
