@@ -26,14 +26,14 @@
     var contextMenu = new ContextMenu(elements);
     var canvas = new Canvas("test",640,480);
 
-    var image1 = new Image("res/cave.png");
-    var image2 = new Image("res/tileset.png");
+    var image1 = new ImageContainer("./res/cave.png");
+    var image2 = new ImageContainer("./res/tileset.png");
 
     var imageLoader = new ImageLoader([image1,image2]);
     imageLoader.loadAll();
 
-    canvas.getContext().drawImage(image1, 10,10);
-    canvas.getContext().drawImage(image2, 276,10);
+    canvas.getContext().drawImage(image1.getImage(), 10,10);
+    canvas.getContext().drawImage(image2.getImage(), 276,10);
 
 </script>
 </body>

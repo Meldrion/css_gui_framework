@@ -1,13 +1,15 @@
+"use strict";
+
 function Canvas(id,width,height) {
 
-    Canvas.prototype.id = id;
-    Canvas.prototype.width = width;
-    Canvas.prototype.height = height;
-    Canvas.prototype.canvas = null;
-    Canvas.prototype.context = null;
+    this.id = id;
+    this.width = width;
+    this.height = height;
+    this.canvas = null;
+    this.context = null;
 
-    Canvas.prototype.html =
-        "<canvas id=\"" + id + "\" width=\"" + width + "\" height=\" "  + height +  "\"></canvas>"
+    this.html =
+        "<canvas id=\"" + id + "\" width=\"" + width + "\" height=\" "  + height +  "\"></canvas>";
     $("body").append(this.html);
 
     this.canvas = document.getElementById(id);

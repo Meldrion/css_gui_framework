@@ -1,16 +1,24 @@
+"use strict";
+
 function ImageLoader(imageList) {
-    ImageLoader.prototype.imageList = imageList;
+    this.imageList = imageList;
 }
 
 ImageLoader.prototype.loadAll = function() {
-    ImageLoader.prototype.imageList.forEach(function(image) {
+
+    var cSIL = this.checkSingleIsLoaded;
+
+    this.imageList.forEach(function(image) {
         image.load();
-        this.checkSingleIsLoaded(image);
+        cSIL(image,cSIL);
     });
+
 };
 
-ImageLoader.prototype.checkSingleIsLoaded = function(image) {
+ImageLoader.prototype.checkSingleIsLoaded = function(image,timeoutFunction) {
     if (!image.isLoaded()) {
-        setTimeout(this.checkSingleIsLoaded(image),8);
+        setTimeout(function() {
+            timeoutFunction(image,timeoutFunction);
+        },8);
     }
 };
