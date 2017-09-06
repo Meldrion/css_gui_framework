@@ -1,9 +1,15 @@
 <html>
 <meta charset="UTF-8" />
 <head>
+
+    <!--<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css"/>-->
     <link rel="stylesheet" href="main.css"/>
+
+
     <script src="libs/jquery-3.2.1.js"></script>
+    <!--<script src="libs/bootstrap/js/bootstrap.js"></script>-->
     <script src="js/context_menu.js"></script>
+    <script src="js/canvas.js"></script>
 </head>
 
 <body>
@@ -17,7 +23,15 @@
         {name:"Map Properties",action:function () {}}
     ];
 
-    new ContextMenu(elements);
+    var contextMenu = new ContextMenu(elements);
+    var canvas = new Canvas("test",640,480);
+
+/*    var imageObj = new Image();
+    imageObj.onload = function() {
+        context.drawImage(imageObj, 69, 50);
+    };
+    imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';*/
+
 </script>
 </body>
 
