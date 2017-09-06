@@ -4,21 +4,25 @@ function ImageLoader(imageList) {
     this.imageList = imageList;
 }
 
-ImageLoader.prototype.loadAll = function() {
-
-    var cSIL = this.checkSingleIsLoaded;
+ImageLoader.prototype.loadAll = function(doneFunction) {
 
     this.imageList.forEach(function(image) {
         image.load();
-        cSIL(image,cSIL);
     });
 
-};
+    var counter = 0;
+    var ref = this;
+    var intervalID = setInterval(function(){
 
-ImageLoader.prototype.checkSingleIsLoaded = function(image,timeoutFunction) {
-    if (!image.isLoaded()) {
-        setTimeout(function() {
-            timeoutFunction(image,timeoutFunction);
-        },8);
-    }
+        if (counter >= ref.imageList.length) {
+            clearInterval(intervalID);
+            doneFunction();
+        } else {
+            if (ref.imageList[counter].isLoaded()) {
+                counter++;
+            }
+        }
+
+        console.log(counter);
+    }, 100);
 };

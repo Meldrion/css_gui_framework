@@ -30,10 +30,10 @@
     var image2 = new ImageContainer("./res/tileset.png");
 
     var imageLoader = new ImageLoader([image1,image2]);
-    imageLoader.loadAll();
-
-    canvas.getContext().drawImage(image1.getImage(), 10,10);
-    canvas.getContext().drawImage(image2.getImage(), 276,10);
+    imageLoader.loadAll(function() {
+        canvas.getContext().drawImage(image1.getImage(), 10,10);
+        canvas.getContext().drawImage(image2.getImage(), 276,10);
+    });
 
 </script>
 </body>
